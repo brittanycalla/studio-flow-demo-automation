@@ -14,7 +14,6 @@ async function updateDates() {
 
         // list of ids to update
         const shootIdsArray = process.env.SHOOTS.split(',');
-        console.log(shootIdsArray)
         const idsToUpdate = shootIdsArray.map(id => new ObjectId(id));
 
         const shoots = await collection.find({ _id: { $in: idsToUpdate } }).toArray();
@@ -32,8 +31,8 @@ async function updateDates() {
                   { _id: shoot._id },
                   {
                       $set: {
-                          startDate: newStartDate.toISOString(),
-                          endDate: newEndDate.toISOString()
+                          startDate: newStartDate,
+                          endDate: newEndDate
                       }
                   }
               );
