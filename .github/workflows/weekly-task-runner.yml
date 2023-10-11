@@ -2,7 +2,7 @@ name: Update Demo Shoots
 
 on:
   schedule:
-    - cron: '32 2 * * 3'
+    - cron: '00 04 * * 1'
   workflow_dispatch:
 
 jobs:
