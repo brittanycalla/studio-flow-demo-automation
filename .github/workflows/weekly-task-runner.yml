@@ -22,3 +22,6 @@ jobs:
       
     - name: Run the script
       run: node ./app.js
+      env:
+        SHOOTS: ${{ secrets.SHOOTS }}
+        DB_STRING: ${{ secrets.DB_STRING }}
